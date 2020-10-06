@@ -4,7 +4,7 @@ use PHPUnit\Framework\TestCase;
 
 class FechaTest extends TestCase
 { 
-    
+/*
     public function testFechaString() {
         //Comprueba si la fecha es un string
         $fechaPrueba = new Fecha('29/09/2020');
@@ -45,7 +45,7 @@ class FechaTest extends TestCase
         $this->assertGreaterThanOrEqual($splitFecha[1], 12);
     }
 
-    public function test4CaracteressAno() {
+    public function test4CaracteresAno() {
         //Comprueba si el año tiene 4 caracteres
         $fechaPrueba = new Fecha('29/09/2020');
         $splitFecha = explode('/', $fechaPrueba->fecha);
@@ -56,7 +56,7 @@ class FechaTest extends TestCase
     public function testBisiesto() {
         //Comprueba que si el año no es bisiesto, no debe tener más de 28 días, si 
         //lo es no debería tener más de 29 días
-        $fechaPrueba = new Fecha('28/02/2021');
+        $fechaPrueba = new Fecha('10/02/2020');
         $splitFecha = explode('/', $fechaPrueba->fecha);
         if ($splitFecha[2]%4!== 0 && $splitFecha[1] == 2){
             $this->assertGreaterThanOrEqual($splitFecha[0], 28);
@@ -81,13 +81,19 @@ class FechaTest extends TestCase
 
     public function testMeses30Dias() {
         //Comprueba si el mes es de 30 o de 31 días
-        $fechaPrueba = new Fecha('31/09/2020');
+        $fechaPrueba = new Fecha('29/09/2020');
         $splitFecha = explode('/', $fechaPrueba->fecha);
         if((int)$splitFecha[1] == 2 || (int)$splitFecha[1] == 4 || (int)$splitFecha[1] == 6 || (int)$splitFecha[1] == 9 || (int)$splitFecha[1] == 11){
             $this->assertGreaterThanOrEqual($splitFecha[0], 30);
         } else {
             $this->assertTrue(true);
         } 
+    }
+    */
+    public function testAll(){
+        $fechaPrueba = new Fecha('20/02/2020');
+        $this->assertTrue($fechaPrueba->fechaTestAll($fechaPrueba->fecha));
+
     }
 
 }
